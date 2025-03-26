@@ -82,16 +82,32 @@ class _ChartsScreenState extends State<ChartsScreen> with SingleTickerProviderSt
         break;
     }
 
+    print('\nUpdating filtered data for timeframe: $_selectedTimeframe');
+    print('Start date: $startDate');
+    print('Original data points: ${widget.fund.dates.length}');
+
     final indices = widget.fund.dates.asMap().entries
         .where((entry) => entry.value.isAfter(startDate))
         .map((entry) => entry.key)
         .toList();
+
+    print('Filtered data points: ${indices.length}');
 
     setState(() {
       _filteredNavValues = indices.map((i) => widget.fund.navValues[i]).toList();
       _filteredBenchmarkValues = indices.map((i) => widget.fund.benchmarkValues[i]).toList();
       _filteredDates = indices.map((i) => widget.fund.dates[i]).toList();
     });
+
+    print('Filtered NAV values: ${_filteredNavValues.length} points');
+    print('First NAV: ${_filteredNavValues.first}');
+    print('Last NAV: ${_filteredNavValues.last}');
+    print('Filtered Benchmark values: ${_filteredBenchmarkValues.length} points');
+    print('First Benchmark: ${_filteredBenchmarkValues.first}');
+    print('Last Benchmark: ${_filteredBenchmarkValues.last}');
+    print('Filtered Dates: ${_filteredDates.length} points');
+    print('First Date: ${_filteredDates.first}');
+    print('Last Date: ${_filteredDates.last}\n');
   }
 
   @override

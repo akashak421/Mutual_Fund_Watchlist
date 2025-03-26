@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mutual_fund_watchlist.iml" filepath="$PROJECT_DIR$/mutual_fund_watchlist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/mutual_fund_watchlist_android.iml" filepath="$PROJECT_DIR$/android/mutual_fund_watchlist_android.iml" />
+    </modules>
+  </component>
+</project>
